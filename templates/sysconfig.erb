@@ -1,0 +1,11 @@
+# THIS FILE IS MANAGED BY PUPPET
+
+<% if node_hostname -%>
+NETWORKING=yes
+NETWORKING_IPV6=no
+HOSTNAME=<%= node_hostname %>
+<% else -%>
+NETWORKING=yes
+NETWORKING_IPV6=no
+HOSTNAME=localhost.localdomain
+<% end -%>
