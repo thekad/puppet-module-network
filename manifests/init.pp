@@ -56,7 +56,8 @@ class network {
 
     exec {
         'set-hostname':
-            command => "hostname ${shortname}";
+            command => "hostname ${shortname}",
+            unless  => "[ `hostname` == ${shortname} ]";
     }
 
     if $node_hostnames {
